@@ -29,9 +29,9 @@
         .mic {
             margin: auto;
             width: 350px;
-            height: 250px;
+            height: 350px;
             background-color: #ff0000;
-            border-radius: 10%;
+            border-radius:20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,7 +43,7 @@
 
         .listening-text {
             position: absolute;
-            bottom: -30px;
+            bottom: -50px;
             font-size: 1em;
             color: #b8b8b8;
         }
@@ -51,12 +51,12 @@
 </head>
 <body>
 
-    <h1 >SENTRA AI</h1>
+    <h1 style="color: #fff; align-items: center; ">SENTRA AI</h1>
 
 <button class="top-button" onclick="playAudio('audio1')">Play Audio 1</button>
 
 <div class="mic" id="mic">
-    BATERRY LOW
+    BATTERY LOW
     <div class="listening-text" id="listeningText"></div>
 </div>
 
