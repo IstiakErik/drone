@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+        }
+
+        .top-button, .bottom-button {
+            padding: 5em 2em;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            margin: 1em;
+            background-color: #000000;
+            color: rgb(0, 0, 0);
+        }
+
+        .mic {
+            margin: auto;
+            width: 220px;
+            height: 220px;
+            background-color: #3b473a;
+            border-radius: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: rgb(158, 158, 158);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .listening-text {
+            position: absolute;
+            bottom: -30px;
+            font-size: 1em;
+            color: #b8b8b8;
+        }
+    </style>
+</head>
+<body>
+
+<button class="top-button" onclick="playAudio('audio1')">Play Audio 1</button>
+
+<div class="mic" id="mic">
+    Click here
+    <div class="listening-text" id="listeningText"></div>
+</div>
+
+<button class="bottom-button" onclick="playAudio('audio2')">Play Audio 2</button>
+
+<audio id="audio1" src="1.mp3"></audio>
+<audio id="audio2" src="audio2.mp3"></audio>
+
+<script>
+    const mic = document.getElementById('mic');
+    const listeningText = document.getElementById('listeningText');
+
+    mic.addEventListener('click', () => {
+        listeningText.innerText = "Listening...";
+        setTimeout(() => {
+            listeningText.innerText = "";
+        }, 2000); // reset after 2s
+    });
+
+    function playAudio(id) {
+        const audio = document.getElementById(id);
+        audio.play();
+    }
+</script>
+
+</body>
+</html>
